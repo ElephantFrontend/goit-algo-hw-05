@@ -30,23 +30,20 @@ class HashTable:
                 del self.table[index][i]
                 return True
         return False
-    
-    #  Реалізація двійкового пошуку для відсортованого масиву.
-    def binary_search(arr, target):
-        left, right = 0, len(arr) - 1
-        iterations = 0
-        upper_bound = None
-        
-        while left <= right:
-            mid = (left + right) // 2
-            iterations += 1
-            
-            if arr[mid] == target:
-                return (iterations, arr[mid])
-            elif arr[mid] < target:
-                left = mid + 1
-            else:
-                upper_bound = arr[mid]
-                right = mid - 1
-                
-        return (iterations, upper_bound)
+
+# Створюємо хеш-таблицю розміром 10.
+hash_table = HashTable(10)
+
+# Додаємо елементи.
+hash_table.insert("apple", 3)
+hash_table.insert("banana", 5)
+hash_table.insert("orange", 2)
+
+# Отримуємо значення.
+print("Значення для 'apple':", hash_table.get("apple"))  # Виведе: 3
+print("Значення для 'banana':", hash_table.get("banana"))  # Виведе: 5
+print("Значення для 'grape':", hash_table.get("grape"))  # Виведе: None, оскільки 'grape' немає в таблиці
+
+# Видаляємо елемент.
+print("Видалення 'orange':", hash_table.delete("orange"))  # Виведе: True
+print("Значення для 'orange' після видалення:", hash_table.get("orange"))  # Виведе: None

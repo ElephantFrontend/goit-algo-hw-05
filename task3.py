@@ -114,11 +114,11 @@ algorithms = {
 
 # Збереження результатів.
 results = {
-    "article1": {
+    "стаття1": {
         "existing": {},
         "non_existing": {}
     },
-    "article2": {
+    "стаття2": {
         "existing": {},
         "non_existing": {}
     }
@@ -127,16 +127,16 @@ results = {
 # Виконання алгоритмів для кожного підрядка в обох текстах.
 for name, func in algorithms.items():
     # Існуючий підрядок в тексті 1
-    results["article1"]["existing"][name] = measure_time(func, text1, existing_substring)
+    results["стаття1"]["existing"][name] = measure_time(func, text1, existing_substring)
     # Вигаданий підрядок в тексті 1
-    results["article1"]["non_existing"][name] = measure_time(func, text1, non_existing_substring)
+    results["стаття1"]["non_existing"][name] = measure_time(func, text1, non_existing_substring)
     # Існуючий підрядок в тексті 2
-    results["article2"]["existing"][name] = measure_time(func, text2, existing_substring)
+    results["стаття2"]["existing"][name] = measure_time(func, text2, existing_substring)
     # Вигаданий підрядок в тексті 2
-    results["article2"]["non_existing"][name] = measure_time(func, text2, non_existing_substring)
+    results["стаття2"]["non_existing"][name] = measure_time(func, text2, non_existing_substring)
 
 # Вивід результатів
-print("Результати для тексту 1 з існуючим підрядком:", results["article1"]["existing"])
-print("Результати для тексту 1 з вигаданим підрядком:", results["article1"]["non_existing"])
-print("Результати для тексту 2 з існуючим підрядком:", results["article2"]["existing"])
-print("Результати для тексту 2 з вигаданим підрядком:", results["article2"]["non_existing"])
+print("Результати для тексту 1 з існуючим підрядком:", results["стаття1"]["existing"])
+print("Результати для тексту 1 з вигаданим підрядком:", results["стаття1"]["non_existing"])
+print("Результати для тексту 2 з існуючим підрядком:", results["стаття2"]["existing"])
+print("Результати для тексту 2 з вигаданим підрядком:", results["стаття2"]["non_existing"])
